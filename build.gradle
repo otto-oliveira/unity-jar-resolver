@@ -37,9 +37,8 @@ project.ext {
                      (new FileNameFinder()).getFileNames(
                              "/", "Applications/Unity/Hub/Editor/*/Unity.app/Contents/MacOS/Unity"),
              (OperatingSystem.WINDOWS):
-             ["\\Program Files\\Unity\\Editor\\Unity.exe"] +
-                     (new FileNameFinder()).getFileNames(
-                             "\\", "Program Files\\Unity\\Hub\\Editor\\*\\Editor\\Unity.exe"),
+             ["O:\\Hub\\Editor\\Editor\\Unity.exe"] +
+                     (new FileNameFinder()).getFileNames("O:\\Hub\\Editor", "\\*\\Editor\\Unity.exe"),
              (OperatingSystem.LINUX)  : ["/opt/Unity/Editor/Unity"]][operatingSystem]
 
     // Search for the Unity editor executable.
@@ -57,6 +56,7 @@ project.ext {
     }
     saveProperty("UNITY_EXE", unityExe, cacheProperties)
 
+    println("Unity exe path: " + unityExe.parentFile.absolutePath)
     // Path fragment that is the parent of the unity executable install location.
     // This is used to find the unity root directory from the editor executable.
     String unityExeParentPath =
@@ -65,8 +65,12 @@ project.ext {
              (OperatingSystem.WINDOWS): "Editor",
              (OperatingSystem.LINUX)  : "Editor"][operatingSystem]
     File unityRootDir = findFileProperty(
-            "UNITY_DIR", new File(unityExe.parentFile.absolutePath -
-            unityExeParentPath), true)
+            "UNITY_DIR", new File(unityExe.parentFile.absolutePath), true)
+    File ffff =  new File(unityExe.parentFile.absolutePath -
+            unityExeParentPath)
+    println(ffff.exists())
+    println(ffff)
+    println(ffff.parentFile.absolutePath)
     if (unityRootDir == null) {
         throw new StopActionException("Unity root directory (UNITY_DIR) not found.")
     }
@@ -121,17 +125,19 @@ project.ext {
     }
     saveProperty("XBUILD_EXE", xbuildExe, cacheProperties)
 
+    //O:\Hub\Editor\2020.3.48f1\Editor\Data\MonoBleedingEdge\bin
     // Find mono to determine the distribution being used.
     monoExe = getFileFromPropertyOrFileTree(
             "MONO_EXE", false, {
         unityRootDirTree.matching {
             include(operatingSystem == OperatingSystem.WINDOWS ?
-                    "**/bin/mono.bat" : "**/bin/mono")
+                    "Data/MonoBleedingEdge/bin/mono.exe" : "**/bin/mono")
             exclude unitySearchDirExcludes
         }
     })
     saveProperty("MONO_EXE", monoExe, cacheProperties)
 
+    println(monoExe)
     // Get the mono distribution version.
     def versionRegEx = /^.* version ([^ ]+) .*/
     def stdout = new ByteArrayOutputStream()
