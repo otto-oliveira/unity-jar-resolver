@@ -10,7 +10,7 @@
     <RootNamespace>Google</RootNamespace>
     <AssemblyName>Google.IntegrationTester</AssemblyName>
     <ReleaseVersion>1.2</ReleaseVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
