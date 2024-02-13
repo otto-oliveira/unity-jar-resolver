@@ -1055,13 +1055,16 @@ Task createXbuildTask(String taskName, String taskDescription,
         outputs.files files(outputFilesInBinaryOutputDir)
         doLast {
             exec {
-                executable project.ext.xbuildExe
+                println("absolutePath " + projectToBuild.parentFile.absolutePath)
+                //executable project.ext.xbuildExe
+                executable "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
                 workingDir projectToBuild.parentFile.absolutePath
+
                 args([sprintf("/target:%s", target),
-                      sprintf("/property:UnityHintPath=%s",
+                      /*sprintf("/property:UnityHintPath=%s",
                               project.ext.unityDllPath.absolutePath),
                       sprintf("/property:UnityIosPath=%s",
-                              project.ext.unityIosPath.absolutePath),
+                              project.ext.unityIosPath.absolutePath),*/
                       sprintf("/property:BaseIntermediateOutputPath=%s%s",
                               intermediatesDir.absolutePath,
                               File.separator),
