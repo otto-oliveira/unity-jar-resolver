@@ -32,13 +32,10 @@ project.ext {
     // Default installation path for Unity based upon the host operating system.
     List<String> defaultUnityPaths =
             [(OperatingSystem.UNKNOWN): ["Unity"],
-             (OperatingSystem.MAC_OSX):
-             ["/Applications/Unity/Unity.app/Contents/MacOS/Unity"] +
+             (OperatingSystem.MAC_OSX): ["/Applications/Unity/Unity.app/Contents/MacOS/Unity"] +
                      (new FileNameFinder()).getFileNames(
                              "/", "Applications/Unity/Hub/Editor/*/Unity.app/Contents/MacOS/Unity"),
-             (OperatingSystem.WINDOWS):
-             ["O:\\Hub\\Editor\\Editor\\Unity.exe"] +
-                     (new FileNameFinder()).getFileNames("O:\\Hub\\Editor", "\\*\\Editor\\Unity.exe"),
+             (OperatingSystem.WINDOWS): ["O:\\Hub\\Editor\\2021.3.27f1\\Editor\\Unity.exe"],
              (OperatingSystem.LINUX)  : ["/opt/Unity/Editor/Unity"]][operatingSystem]
 
     // Search for the Unity editor executable.
