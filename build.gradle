@@ -317,7 +317,7 @@ project.ext {
     pythonBootstrapDir = new File(externalToolsDir, "python_bootstrap")
     pythonBinDir = new File(pythonBootstrapDir, "python")
     // Python binary after it has been bootstrapped.
-    pythonExe = new File(pythonBinDir, "python3.exe")
+    pythonExe = new File(pythonBinDir, "python")
     // Pip binary after it has been bootstrapped.
     pipExe = new File(new File(pythonBinDir, "Scripts"), "pip3")
     println("pipExe " + project.ext.pipExe)
