@@ -315,11 +315,12 @@ project.ext {
     // Changelog file.
     changelog = new File(scriptDirectory, "CHANGELOG.md")
     pythonBootstrapDir = new File(externalToolsDir, "python_bootstrap")
-    pythonBinDir = new File(new File(pythonBootstrapDir, "python"), "bin")
+    pythonBinDir = new File(pythonBootstrapDir, "python")
     // Python binary after it has been bootstrapped.
-    pythonExe = new File(pythonBinDir, "python3")
+    pythonExe = new File(pythonBinDir, "python3.exe")
     // Pip binary after it has been bootstrapped.
-    pipExe = new File(pythonBinDir, "pip3")
+    pipExe = new File(new File(pythonBinDir, "Scripts"), "pip3")
+    println("pipExe " + project.ext.pipExe)
     // Python packages required by export_unity_package.py
     exportUnityPackageRequirements = ["absl-py", "PyYAML", "packaging"]
     // Python packages required by gen_guids.py
