@@ -63,11 +63,7 @@ project.ext {
              (OperatingSystem.LINUX)  : "Editor"][operatingSystem]
     File unityRootDir = findFileProperty(
             "UNITY_DIR", new File(unityExe.parentFile.absolutePath), true)
-    File ffff =  new File(unityExe.parentFile.absolutePath -
-            unityExeParentPath)
-    println(ffff.exists())
-    println(ffff)
-    println(ffff.parentFile.absolutePath)
+
     if (unityRootDir == null) {
         throw new StopActionException("Unity root directory (UNITY_DIR) not found.")
     }
@@ -2462,6 +2458,14 @@ task cleanTests(type: Delete) {
 task cleanAll(type: Delete) {
     description "Clean the build directory."
     delete project.ext.buildDir
+}
+
+task customBuild(type: Task) {
+    dependsOn ':build'
+    description "Build the project"
+    doLast {
+        println("SUCCESS!!!!")
+    }
 }
 
 project.defaultTasks = ["build", "test", "release", "clean"].collect {
