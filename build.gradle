@@ -1614,7 +1614,7 @@ Task createInstallPythonPackageTask(String taskName, String description,
             type: Exec,
             dependsOn: dependsOn + ["build_envs"]).with {
         executable project.ext.pipExe
-        args(["-q", "install"] + packages)
+        args(["install"] + packages)
     }
 }
 
@@ -1653,7 +1653,9 @@ Task createPythonTask(String taskName, String description,
             type: Exec,
             dependsOn: (dependsOn + installPackagesTask + ["build_envs"])).with {
         ignoreExitValue continueOnFail
+        println("project.ext.pythonExe " + project.ext.pythonExe)
         executable project.ext.pythonExe
+        println("PYTHON SCRIPT ARGS " + [script.absolutePath] + arguments)
         args([script.absolutePath] + arguments)
     }
     return pythonTask
@@ -1701,7 +1703,7 @@ Task createExportUnityPackageTask(String taskName,
                              "--output_unitypackage" : "--nooutput_unitypackage"] +
                     [generateUpmTarball ? "--output_upm" : "--nooutput_upm"] +
                     (guidsFile ? ["--guids_file", guidsFile] : []) +
-                    ["-v", "-1"] + // Only display warnings.
+                    ["-v", "2"] + // Only display warnings.
                     arguments,
             exportUnityPackageRequirements)
     exportUnityPackageTask.with {
@@ -2108,6 +2110,7 @@ Task buildPlugin = createExportUnityPackageTask(
         project.ext.pluginExportFile.parentFile,
         ["--enabled_sections", "unitypackage documentation"])
 buildPlugin.with {
+    println("qweqweqweqweqw " + outputs.files.size())
     outputs.files project.ext.pluginExportFile.absolutePath
 }
 
