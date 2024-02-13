@@ -31,7 +31,7 @@
      <ConsolePause>False</ConsolePause>
    </PropertyGroup>
   <PropertyGroup>
-    <UnityHintPath>..\..\unity_dlls</UnityHintPath>
+    <UnityHintPath>..\..\..\unity_dlls</UnityHintPath>
   </PropertyGroup>
    <ItemGroup>
      <Reference Include="UnityEditor">
