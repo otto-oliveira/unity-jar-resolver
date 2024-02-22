@@ -2468,7 +2468,7 @@ task cleanAll(type: Delete) {
 }
 
 task customBuild(type: Task) {
-    dependsOn ':build'
+    dependsOn ':buildPlugin'
     description "Build the project"
     doLast {
         println("SUCCESS!!!!")
