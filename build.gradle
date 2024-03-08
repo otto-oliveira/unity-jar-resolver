@@ -1057,10 +1057,11 @@ Task createXbuildTask(String taskName, String taskDescription,
             exec {
                 println("absolutePath " + projectToBuild.parentFile.absolutePath)
                 //executable project.ext.xbuildExe
-                executable "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
+                //executable "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
+                executable "dotnet"
                 workingDir projectToBuild.parentFile.absolutePath
 
-                args([sprintf("/target:%s", target),
+                args(["msbuild", sprintf("/target:%s", target),
                       /*sprintf("/property:UnityHintPath=%s",
                               project.ext.unityDllPath.absolutePath),
                       sprintf("/property:UnityIosPath=%s",
@@ -1071,7 +1072,7 @@ Task createXbuildTask(String taskName, String taskDescription,
                       sprintf("/property:OutputPath=%s%s",
                               binaryOutputDir.absolutePath,
                               File.separator),
-                      "/verbosity:quiet",
+                      "/verbosity:normal",
                       projectToBuild.absolutePath])
             }
         }
@@ -1102,6 +1103,7 @@ Task createBuildPluginDllTask(String componentName,
                               String assemblyDllBasename,
                               Boolean versionDll,
                               Iterable<Task> dependsOn = null) {
+
     File projectDir = new File(project.ext.pluginSourceDir, projectName)
     File projectBuildDir = new File(project.ext.buildDir, projectName)
 
@@ -1128,7 +1130,7 @@ Task createBuildPluginDllTask(String componentName,
             project.ext.pluginStagingAreaDir.name),
             project.ext.pluginEditorDllDir.path)
     Map<String, File> stagingFileMap =
-            unversionedFiles.collectEntries { File unversionedFile ->
+            unversionedFiles.collectEntries  { File unversionedFile ->
                 File unversionedOutputFile = new File(stagingDir.path,
                         unversionedFile.name)
                 return [
@@ -1653,9 +1655,10 @@ Task createPythonTask(String taskName, String description,
             type: Exec,
             dependsOn: (dependsOn + installPackagesTask + ["build_envs"])).with {
         ignoreExitValue continueOnFail
-        println("project.ext.pythonExe " + project.ext.pythonExe)
+        //println("project.ext.pythonExe " + project.ext.pythonExe)
+        //println("PYTHON SCRIPT ARGS " + [script.absolutePath] + arguments)
+
         executable project.ext.pythonExe
-        println("PYTHON SCRIPT ARGS " + [script.absolutePath] + arguments)
         args([script.absolutePath] + arguments)
     }
     return pythonTask
@@ -1938,6 +1941,8 @@ task updateEmbeddedGradleWrapper(type: Zip) {
             "source/AndroidResolver/scripts"))
 }
 
+Task buildAPCM = createBuildPluginDllTask(
+        "AndroidProjectGradle", "AndroidProjectGradle", "Google.AndroidProjectGradle.dll", false)
 Task buildVersionHandler = createBuildPluginDllTask(
         "VersionHandler", "VersionHandler", "Google.VersionHandler.dll", false)
 Task buildVersionHandlerImpl = createBuildPluginDllTask(
@@ -2006,6 +2011,7 @@ Task copyDocumentationToStagingArea = createCopyFilesTask(
         { sourceFile, targetFile -> copyAssetMetadataFile(sourceFile, targetFile) })
 
 Iterable<Task> copyComponentsToStagingAreaTasks = [
+        copyAndroidProjectGradleStaging,
         copyAndroidResolverStaging,
         copyVersionHandlerStaging,
         copyVersionHandlerImplStaging,
@@ -2104,13 +2110,13 @@ Task buildPlugin = createExportUnityPackageTask(
         new File(project.ext.scriptDirectory, "export_unity_package_config.json"),
         new File(project.ext.scriptDirectory, "export_unity_package_guids.json"),
         new File(project.ext.pluginStagingAreaDir, "Assets"),
-        true,  // Enable .unitypackage export.
+        false,  // Enable .unitypackage export.
         false, // Disable UPM export.
         project.ext.pluginVersion,
         project.ext.pluginExportFile.parentFile,
         ["--enabled_sections", "unitypackage documentation"])
 buildPlugin.with {
-    println("qweqweqweqweqw " + outputs.files.size())
+    //println("qweqweqweqweqw " + outputs.files.size())
     outputs.files project.ext.pluginExportFile.absolutePath
 }
 
@@ -2468,7 +2474,7 @@ task cleanAll(type: Delete) {
 }
 
 task customBuild(type: Task) {
-    dependsOn ':buildPlugin'
+    dependsOn ':release'
     description "Build the project"
     doLast {
         println("SUCCESS!!!!")

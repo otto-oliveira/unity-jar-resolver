@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7681aafc-bc62-4b08-8186-30b36d38aab8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.179_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.179_manifest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.179_manifest.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../exploded/Assets/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.179_manifest.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../export_unity_package_guids.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../export_unity_package_guids.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../external-dependency-manager-1.2.179.unitypackage" beforeDir="false" afterPath="$PROJECT_DIR$/../../../external-dependency-manager-1.2.179.unitypackage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../external-dependency-manager-latest.unitypackage" beforeDir="false" afterPath="$PROJECT_DIR$/../../../external-dependency-manager-latest.unitypackage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AndroidResolver.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../AndroidResolver.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle-template.zip" beforeDir="false" afterPath="$PROJECT_DIR$/gradle-template.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/SettingsDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../src/SettingsDialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../VersionHandler/src/VersionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../VersionHandler/src/VersionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/CHANGELOG.md.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/CHANGELOG.md.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.pdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.IOSResolver.pdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.pdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.JarResolver.pdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.pdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.PackageManagerResolver.pdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.pdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/1.2.179/Google.VersionHandlerImpl.pdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/Google.VersionHandler.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/Google.VersionHandler.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/Google.VersionHandler.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/Google.VersionHandler.dll.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/Google.VersionHandler.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/Google.VersionHandler.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/Google.VersionHandler.pdb.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/Google.VersionHandler.pdb.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.179_manifest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.179_manifest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.179_manifest.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/ExternalDependencyManager/Editor/external-dependency-manager_version-1.2.179_manifest.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/LICENSE.md.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/LICENSE.md.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/README.md.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/README.md.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../upm/package.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/../../../upm/package.json.meta" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2dNeYK8JcV4iGSCOyJdK8QunITj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/unity-editor-path",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="scripts" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="scripts" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7681aafc-bc62-4b08-8186-30b36d38aab8" name="Changes" comment="" />
+      <created>1709853009719</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709853009719</updated>
+      <workItem from="1709853010881" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

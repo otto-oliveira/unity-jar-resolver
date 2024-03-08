@@ -100,4 +100,10 @@
       <Name>VersionHandlerImpl</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="GenCode\Constants.txt" />
+    <Content Include="GenCode\ModifyGradleProject.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

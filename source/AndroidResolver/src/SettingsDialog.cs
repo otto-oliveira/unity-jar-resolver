@@ -384,6 +384,16 @@ namespace GooglePlayServices {
                                           AndroidResolverVersionNumber.Value.Major,
                                           AndroidResolverVersionNumber.Value.Minor,
                                           AndroidResolverVersionNumber.Value.Build));
+            GUILayout.Label("Unity Version" + Application.unityVersion);
+            if (GUILayout.Button("Create C# Scripts"))
+            {
+                if (Application.unityVersion.Equals("2023.2.8f"))
+                {
+                    Debug.Log("Generate Script");
+                    
+                    
+                }
+            }
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
 
             GUI.skin.label.wordWrap = true;
