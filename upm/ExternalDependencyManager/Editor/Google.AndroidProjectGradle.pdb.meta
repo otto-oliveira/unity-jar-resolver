@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 809093af01834dd0a032df502909f19d
+labels:
+- gvh
+- gvh_version-1.2.179
+- gvhp_exportpath-C:\Projects\GET\EDM\unity-jar-resolver\build\AndroidProjectGradle\staging\Assets\ExternalDependencyManager\Editor\Google.AndroidProjectGradle.pdb
+- gvhp_exportpath-ExternalDependencyManager/Editor/Google.AndroidProjectGradle.pdb
+timeCreated: 1538009133
+licenseType: Pro
+DefaultImporter:
+  userData:
+  assetBundleName:
+  assetBundleVariant:
