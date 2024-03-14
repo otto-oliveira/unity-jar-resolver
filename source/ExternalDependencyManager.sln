@@ -23,8 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackageMigratorIntegrationT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidProjectGradle", "AndroidProjectGradle\AndroidProjectGradle.csproj", "{061300AF-2714-452A-B61C-7C0198A9652B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidProjectGradleStandard", "AndroidProjectGradleStandard\AndroidProjectGradleStandard.csproj", "{35677793-714D-427E-9D44-DCB7999B31C2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,9 +73,5 @@ Global
 		{061300AF-2714-452A-B61C-7C0198A9652B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{061300AF-2714-452A-B61C-7C0198A9652B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{061300AF-2714-452A-B61C-7C0198A9652B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{35677793-714D-427E-9D44-DCB7999B31C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{35677793-714D-427E-9D44-DCB7999B31C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{35677793-714D-427E-9D44-DCB7999B31C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{35677793-714D-427E-9D44-DCB7999B31C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
