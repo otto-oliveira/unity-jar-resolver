@@ -314,12 +314,12 @@ project.ext {
     symbolDatabaseExtension = pdbSupported ? ".pdb" : ".dll.mdb"
     // Changelog file.
     changelog = new File(scriptDirectory, "CHANGELOG.md")
-    pythonBootstrapDir = new File(externalToolsDir, "python_bootstrap")
-    pythonBinDir = new File(pythonBootstrapDir, "python")
+    //pythonBootstrapDir = new File(externalToolsDir, "python_bootstrap")
+    //pythonBinDir = new File(pythonBootstrapDir, "python")
     // Python binary after it has been bootstrapped.
-    pythonExe = new File(pythonBinDir, "python")
+    pythonExe = "python3"
     // Pip binary after it has been bootstrapped.
-    pipExe = new File(new File(pythonBinDir, "Scripts"), "pip3")
+    pipExe = "pip3"
     println("pipExe " + project.ext.pipExe)
     // Python packages required by export_unity_package.py
     exportUnityPackageRequirements = ["absl-py", "PyYAML", "packaging"]
@@ -329,9 +329,9 @@ project.ext {
 
 // Configure com.jetbrains.python.envs to bootstrap a Python install.
 envs {
-    bootstrapDirectory = project.ext.pythonBootstrapDir
+    //bootstrapDirectory = project.ext.pythonBootstrapDir
     envsDirectory = new File(project.ext.buildDir, "python_envs")
-    python "python", "3.9.5"
+    //python "python", "3.9.5"
 }
 
 /*
@@ -1056,12 +1056,12 @@ Task createXbuildTask(String taskName, String taskDescription,
         doLast {
             exec {
                 println("absolutePath " + projectToBuild.parentFile.absolutePath)
-                //executable project.ext.xbuildExe
-                //executable "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
-                executable "dotnet"
+                executable project.ext.xbuildExe
+//                executable "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
+//                executable "dotnet"
                 workingDir projectToBuild.parentFile.absolutePath
 
-                args(["msbuild", sprintf("/target:%s", target),
+                args([ sprintf("/target:%s", target),
                       /*sprintf("/property:UnityHintPath=%s",
                               project.ext.unityDllPath.absolutePath),
                       sprintf("/property:UnityIosPath=%s",
