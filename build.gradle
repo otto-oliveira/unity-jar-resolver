@@ -2474,7 +2474,7 @@ task cleanAll(type: Delete) {
 }
 
 task customBuild(type: Task) {
-    dependsOn ':release'
+    dependsOn ':cleanAll',':release'
     description "Build the project"
     doLast {
         println("SUCCESS!!!!")
