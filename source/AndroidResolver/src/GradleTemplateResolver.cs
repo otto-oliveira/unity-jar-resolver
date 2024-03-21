@@ -24,11 +24,12 @@ namespace GooglePlayServices {
     using Google.JarResolver;
 
     using UnityEditor;
+    using UnityEngine;
 
     /// <summary>
     /// Resolver which simply injects dependencies into a gradle template file.
     /// </summary>
-    internal class GradleTemplateResolver {
+    public class GradleTemplateResolver {
 
         /// <summary>
         /// Filename of the Custom Gradle Properties Template file.
@@ -487,6 +488,7 @@ namespace GooglePlayServices {
             return true;
         }
 
+        public static Action<ICollection<Dependency>> OnResolve;
         /// <summary>
         /// Inject / update additional Maven repository urls specified from `Dependencies.xml` in
         /// the Gradle settings template file.
@@ -494,12 +496,20 @@ namespace GooglePlayServices {
         /// <param name="dependencies">Dependencies to inject.</param>
         /// <returns>true if successful, false otherwise.</returns>
         public static bool InjectDependencies(ICollection<Dependency> dependencies) {
+            
+            
             var resolutionMeasurementParameters =
                 PlayServicesResolver.GetResolutionMeasurementParameters(null);
             if (dependencies.Count > 0) {
                 PlayServicesResolver.analytics.Report(
                        "/resolve/gradletemplate", resolutionMeasurementParameters,
                        "Gradle Template Resolve");
+                if (Application.unityVersion.Equals("2023.2.8f1"))
+                {
+                    Debug.Log("Generate Script");
+                    //send event here
+                    OnResolve?.Invoke(dependencies);
+                }
             }
 
             var fileDescription = String.Format("gradle template {0}", GradleTemplatePath);
