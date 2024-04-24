@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Google.PackageManagerClientIntegrationTests</RootNamespace>
     <AssemblyName>Google.PackageManagerClientIntegrationTests</AssemblyName>
-	<TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+	<TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ReleaseVersion>1.2</ReleaseVersion>
     <ProductVersion>12.0.0</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
@@ -30,6 +30,9 @@
      <WarningLevel>4</WarningLevel>
      <ConsolePause>False</ConsolePause>
    </PropertyGroup>
+  <PropertyGroup>
+    <UnityHintPath>..\..\..\unity_dlls</UnityHintPath>
+  </PropertyGroup>
    <ItemGroup>
      <Reference Include="UnityEditor">
        <HintPath>$(UnityHintPath)/UnityEditor.dll</HintPath>

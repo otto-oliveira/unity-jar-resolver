@@ -32,14 +32,10 @@ project.ext {
     // Default installation path for Unity based upon the host operating system.
     List<String> defaultUnityPaths =
             [(OperatingSystem.UNKNOWN): ["Unity"],
-             (OperatingSystem.MAC_OSX):
-             ["/Applications/Unity/Unity.app/Contents/MacOS/Unity"] +
+             (OperatingSystem.MAC_OSX): ["/Applications/Unity/Unity.app/Contents/MacOS/Unity"] +
                      (new FileNameFinder()).getFileNames(
                              "/", "Applications/Unity/Hub/Editor/*/Unity.app/Contents/MacOS/Unity"),
-             (OperatingSystem.WINDOWS):
-             ["\\Program Files\\Unity\\Editor\\Unity.exe"] +
-                     (new FileNameFinder()).getFileNames(
-                             "\\", "Program Files\\Unity\\Hub\\Editor\\*\\Editor\\Unity.exe"),
+             (OperatingSystem.WINDOWS): ["O:\\Hub\\Editor\\2021.3.27f1\\Editor\\Unity.exe"],
              (OperatingSystem.LINUX)  : ["/opt/Unity/Editor/Unity"]][operatingSystem]
 
     // Search for the Unity editor executable.
@@ -57,6 +53,7 @@ project.ext {
     }
     saveProperty("UNITY_EXE", unityExe, cacheProperties)
 
+    println("Unity exe path: " + unityExe.parentFile.absolutePath)
     // Path fragment that is the parent of the unity executable install location.
     // This is used to find the unity root directory from the editor executable.
     String unityExeParentPath =
@@ -65,8 +62,8 @@ project.ext {
              (OperatingSystem.WINDOWS): "Editor",
              (OperatingSystem.LINUX)  : "Editor"][operatingSystem]
     File unityRootDir = findFileProperty(
-            "UNITY_DIR", new File(unityExe.parentFile.absolutePath -
-            unityExeParentPath), true)
+            "UNITY_DIR", new File(unityExe.parentFile.absolutePath), true)
+
     if (unityRootDir == null) {
         throw new StopActionException("Unity root directory (UNITY_DIR) not found.")
     }
@@ -121,17 +118,19 @@ project.ext {
     }
     saveProperty("XBUILD_EXE", xbuildExe, cacheProperties)
 
+    //O:\Hub\Editor\2020.3.48f1\Editor\Data\MonoBleedingEdge\bin
     // Find mono to determine the distribution being used.
     monoExe = getFileFromPropertyOrFileTree(
             "MONO_EXE", false, {
         unityRootDirTree.matching {
             include(operatingSystem == OperatingSystem.WINDOWS ?
-                    "**/bin/mono.bat" : "**/bin/mono")
+                    "Data/MonoBleedingEdge/bin/mono.exe" : "**/bin/mono")
             exclude unitySearchDirExcludes
         }
     })
     saveProperty("MONO_EXE", monoExe, cacheProperties)
 
+    println(monoExe)
     // Get the mono distribution version.
     def versionRegEx = /^.* version ([^ ]+) .*/
     def stdout = new ByteArrayOutputStream()
@@ -315,12 +314,13 @@ project.ext {
     symbolDatabaseExtension = pdbSupported ? ".pdb" : ".dll.mdb"
     // Changelog file.
     changelog = new File(scriptDirectory, "CHANGELOG.md")
-    pythonBootstrapDir = new File(externalToolsDir, "python_bootstrap")
-    pythonBinDir = new File(new File(pythonBootstrapDir, "python"), "bin")
+    //pythonBootstrapDir = new File(externalToolsDir, "python_bootstrap")
+    //pythonBinDir = new File(pythonBootstrapDir, "python")
     // Python binary after it has been bootstrapped.
-    pythonExe = new File(pythonBinDir, "python3")
+    pythonExe = "python3"
     // Pip binary after it has been bootstrapped.
-    pipExe = new File(pythonBinDir, "pip3")
+    pipExe = "pip3"
+    println("pipExe " + project.ext.pipExe)
     // Python packages required by export_unity_package.py
     exportUnityPackageRequirements = ["absl-py", "PyYAML", "packaging"]
     // Python packages required by gen_guids.py
@@ -329,9 +329,9 @@ project.ext {
 
 // Configure com.jetbrains.python.envs to bootstrap a Python install.
 envs {
-    bootstrapDirectory = project.ext.pythonBootstrapDir
+    //bootstrapDirectory = project.ext.pythonBootstrapDir
     envsDirectory = new File(project.ext.buildDir, "python_envs")
-    python "python", "3.9.5"
+    //python "python", "3.9.5"
 }
 
 /*
@@ -1055,20 +1055,24 @@ Task createXbuildTask(String taskName, String taskDescription,
         outputs.files files(outputFilesInBinaryOutputDir)
         doLast {
             exec {
+                println("absolutePath " + projectToBuild.parentFile.absolutePath)
                 executable project.ext.xbuildExe
+//                executable "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
+//                executable "dotnet"
                 workingDir projectToBuild.parentFile.absolutePath
-                args([sprintf("/target:%s", target),
-                      sprintf("/property:UnityHintPath=%s",
+
+                args([ sprintf("/target:%s", target),
+                      /*sprintf("/property:UnityHintPath=%s",
                               project.ext.unityDllPath.absolutePath),
                       sprintf("/property:UnityIosPath=%s",
-                              project.ext.unityIosPath.absolutePath),
+                              project.ext.unityIosPath.absolutePath),*/
                       sprintf("/property:BaseIntermediateOutputPath=%s%s",
                               intermediatesDir.absolutePath,
                               File.separator),
                       sprintf("/property:OutputPath=%s%s",
                               binaryOutputDir.absolutePath,
                               File.separator),
-                      "/verbosity:quiet",
+                      "/verbosity:normal",
                       projectToBuild.absolutePath])
             }
         }
@@ -1099,6 +1103,7 @@ Task createBuildPluginDllTask(String componentName,
                               String assemblyDllBasename,
                               Boolean versionDll,
                               Iterable<Task> dependsOn = null) {
+
     File projectDir = new File(project.ext.pluginSourceDir, projectName)
     File projectBuildDir = new File(project.ext.buildDir, projectName)
 
@@ -1125,7 +1130,7 @@ Task createBuildPluginDllTask(String componentName,
             project.ext.pluginStagingAreaDir.name),
             project.ext.pluginEditorDllDir.path)
     Map<String, File> stagingFileMap =
-            unversionedFiles.collectEntries { File unversionedFile ->
+            unversionedFiles.collectEntries  { File unversionedFile ->
                 File unversionedOutputFile = new File(stagingDir.path,
                         unversionedFile.name)
                 return [
@@ -1611,7 +1616,7 @@ Task createInstallPythonPackageTask(String taskName, String description,
             type: Exec,
             dependsOn: dependsOn + ["build_envs"]).with {
         executable project.ext.pipExe
-        args(["-q", "install"] + packages)
+        args(["install"] + packages)
     }
 }
 
@@ -1650,6 +1655,9 @@ Task createPythonTask(String taskName, String description,
             type: Exec,
             dependsOn: (dependsOn + installPackagesTask + ["build_envs"])).with {
         ignoreExitValue continueOnFail
+        //println("project.ext.pythonExe " + project.ext.pythonExe)
+        //println("PYTHON SCRIPT ARGS " + [script.absolutePath] + arguments)
+
         executable project.ext.pythonExe
         args([script.absolutePath] + arguments)
     }
@@ -1698,7 +1706,7 @@ Task createExportUnityPackageTask(String taskName,
                              "--output_unitypackage" : "--nooutput_unitypackage"] +
                     [generateUpmTarball ? "--output_upm" : "--nooutput_upm"] +
                     (guidsFile ? ["--guids_file", guidsFile] : []) +
-                    ["-v", "-1"] + // Only display warnings.
+                    ["-v", "2"] + // Only display warnings.
                     arguments,
             exportUnityPackageRequirements)
     exportUnityPackageTask.with {
@@ -1933,6 +1941,8 @@ task updateEmbeddedGradleWrapper(type: Zip) {
             "source/AndroidResolver/scripts"))
 }
 
+Task buildAPCM = createBuildPluginDllTask(
+        "AndroidProjectGradle", "AndroidProjectGradle", "Google.AndroidProjectGradle.dll", false)
 Task buildVersionHandler = createBuildPluginDllTask(
         "VersionHandler", "VersionHandler", "Google.VersionHandler.dll", false)
 Task buildVersionHandlerImpl = createBuildPluginDllTask(
@@ -2001,6 +2011,7 @@ Task copyDocumentationToStagingArea = createCopyFilesTask(
         { sourceFile, targetFile -> copyAssetMetadataFile(sourceFile, targetFile) })
 
 Iterable<Task> copyComponentsToStagingAreaTasks = [
+        copyAndroidProjectGradleStaging,
         copyAndroidResolverStaging,
         copyVersionHandlerStaging,
         copyVersionHandlerImplStaging,
@@ -2099,12 +2110,13 @@ Task buildPlugin = createExportUnityPackageTask(
         new File(project.ext.scriptDirectory, "export_unity_package_config.json"),
         new File(project.ext.scriptDirectory, "export_unity_package_guids.json"),
         new File(project.ext.pluginStagingAreaDir, "Assets"),
-        true,  // Enable .unitypackage export.
+        false,  // Enable .unitypackage export.
         false, // Disable UPM export.
         project.ext.pluginVersion,
         project.ext.pluginExportFile.parentFile,
         ["--enabled_sections", "unitypackage documentation"])
 buildPlugin.with {
+    //println("qweqweqweqweqw " + outputs.files.size())
     outputs.files project.ext.pluginExportFile.absolutePath
 }
 
@@ -2459,6 +2471,14 @@ task cleanTests(type: Delete) {
 task cleanAll(type: Delete) {
     description "Clean the build directory."
     delete project.ext.buildDir
+}
+
+task customBuild(type: Task) {
+    dependsOn ':cleanAll',':release'
+    description "Build the project"
+    doLast {
+        println("SUCCESS!!!!")
+    }
 }
 
 project.defaultTasks = ["build", "test", "release", "clean"].collect {

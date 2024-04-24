@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="4.0"  DefaultTargets="AndroidProjectGradle" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>8</LangVersion>
+        <AssemblyVersion>1</AssemblyVersion>
+        <FileVersion>223</FileVersion>
+        <RootNamespace>Google</RootNamespace>
+        <AssemblyName>Google.AndroidProjectGradle</AssemblyName>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup>
+        <UnityHintPath>..\..\unity_dlls_new</UnityHintPath>
+    </PropertyGroup>
+    <ItemGroup>
+    <Reference Include="UnityEditor">
+        <HintPath>$(UnityHintPath)/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+        <HintPath>$(UnityHintPath)/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+        <HintPath>$(UnityHintPath)/Unity.Android.Gradle.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+        <HintPath>$(UnityHintPath)/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    </ItemGroup>
+</Project>

@@ -200,6 +200,8 @@ public class VersionHandler {
         } else {
             ReimportPlugin(mostRecentAssembly);
         }
+        
+        Debug.Log("Bootstrap " + GetUnityVersionMajorMinor() );
     }
 
     /// <summary>

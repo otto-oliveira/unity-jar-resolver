@@ -10,7 +10,7 @@
     <RootNamespace>PlayServicesResolver</RootNamespace>
     <AssemblyName>Google.JarResolver</AssemblyName>
     <ReleaseVersion>1.2</ReleaseVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -99,5 +99,13 @@
       <Project>{1E162334-8EA2-440A-9B3A-13FD8FE5C22E}</Project>
       <Name>VersionHandlerImpl</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GenCode\Constants.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="GenCode\ModifyGradleProject.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

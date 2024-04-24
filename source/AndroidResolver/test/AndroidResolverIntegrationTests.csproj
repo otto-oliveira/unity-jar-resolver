@@ -10,7 +10,7 @@
     <RootNamespace>Google</RootNamespace>
     <AssemblyName>Google.AndroidResolverIntegrationTests</AssemblyName>
     <ReleaseVersion>1.2</ReleaseVersion>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>True</DebugSymbols>
@@ -33,7 +33,7 @@
     <ConsolePause>False</ConsolePause>
   </PropertyGroup>
     <PropertyGroup>
-        <UnityHintPath>..\..\unity_dlls</UnityHintPath>
+        <UnityHintPath>..\..\..\unity_dlls</UnityHintPath>
    </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEditor">
