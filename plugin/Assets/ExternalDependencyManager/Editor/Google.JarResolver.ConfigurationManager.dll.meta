@@ -12,6 +12,7 @@ PluginImporter:
   executionOrder: {}
   defineConstraints:
   - UNITY_2023_2
+  - UNITY_6000
   isPreloaded: 0
   isOverridable: 0
   platformData:

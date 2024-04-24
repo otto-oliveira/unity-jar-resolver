@@ -504,7 +504,8 @@ namespace GooglePlayServices {
                 PlayServicesResolver.analytics.Report(
                        "/resolve/gradletemplate", resolutionMeasurementParameters,
                        "Gradle Template Resolve");
-                if (Application.unityVersion.Equals("2023.2.8f1"))
+                Debug.Log($"U version {Application.unityVersion}");
+                if (Application.unityVersion.Equals("6000.0.0b12"))
                 {
                     Debug.Log("Generate Script");
                     //send event here
