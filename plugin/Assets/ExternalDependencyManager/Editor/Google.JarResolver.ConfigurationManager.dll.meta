@@ -11,8 +11,7 @@ PluginImporter:
   iconMap: {}
   executionOrder: {}
   defineConstraints:
-  - UNITY_2023_2
-  - UNITY_6000
+  - UNITY_6000 || UNITY_2023_2
   isPreloaded: 0
   isOverridable: 0
   platformData:
