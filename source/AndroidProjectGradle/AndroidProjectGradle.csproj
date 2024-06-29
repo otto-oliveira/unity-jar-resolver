@@ -6,8 +6,8 @@
         <ProjectGuid>{061300AF-2714-452A-B61C-7C0198A9652B}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>Google</RootNamespace>
-        <AssemblyName>Google.AndroidProjectGradle</AssemblyName>
+        <RootNamespace>Google.Android.ConfigurationManager</RootNamespace>
+        <AssemblyName>Google.JarResolver.ConfigurationManager</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <LangVersion>6</LangVersion>
@@ -57,7 +57,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Constants.cs" />
         <Compile Include="GradleProjectModifier.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>

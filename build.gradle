@@ -35,7 +35,7 @@ project.ext {
              (OperatingSystem.MAC_OSX): ["/Applications/Unity/Unity.app/Contents/MacOS/Unity"] +
                      (new FileNameFinder()).getFileNames(
                              "/", "Applications/Unity/Hub/Editor/*/Unity.app/Contents/MacOS/Unity"),
-             (OperatingSystem.WINDOWS): ["O:\\Hub\\Editor\\2021.3.27f1\\Editor\\Unity.exe"],
+             (OperatingSystem.WINDOWS): ["O:\\Hub\\Editor\\2021.3.35f1\\Editor\\Unity.exe"],
              (OperatingSystem.LINUX)  : ["/opt/Unity/Editor/Unity"]][operatingSystem]
 
     // Search for the Unity editor executable.
@@ -317,7 +317,7 @@ project.ext {
     //pythonBootstrapDir = new File(externalToolsDir, "python_bootstrap")
     //pythonBinDir = new File(pythonBootstrapDir, "python")
     // Python binary after it has been bootstrapped.
-    pythonExe = "python3"
+    pythonExe = "python"
     // Pip binary after it has been bootstrapped.
     pipExe = "pip3"
     println("pipExe " + project.ext.pipExe)
@@ -1058,10 +1058,10 @@ Task createXbuildTask(String taskName, String taskDescription,
                 println("absolutePath " + projectToBuild.parentFile.absolutePath)
                 executable project.ext.xbuildExe
 //                executable "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe"
-//                executable "dotnet"
+                executable "dotnet"
                 workingDir projectToBuild.parentFile.absolutePath
 
-                args([ sprintf("/target:%s", target),
+                args(["msbuild", sprintf("/target:%s", target),
                       /*sprintf("/property:UnityHintPath=%s",
                               project.ext.unityDllPath.absolutePath),
                       sprintf("/property:UnityIosPath=%s",
@@ -1072,7 +1072,7 @@ Task createXbuildTask(String taskName, String taskDescription,
                       sprintf("/property:OutputPath=%s%s",
                               binaryOutputDir.absolutePath,
                               File.separator),
-                      "/verbosity:normal",
+                      "/verbosity:detailed",
                       projectToBuild.absolutePath])
             }
         }
@@ -1941,8 +1941,7 @@ task updateEmbeddedGradleWrapper(type: Zip) {
             "source/AndroidResolver/scripts"))
 }
 
-Task buildAPCM = createBuildPluginDllTask(
-        "AndroidProjectGradle", "AndroidProjectGradle", "Google.AndroidProjectGradle.dll", false)
+
 Task buildVersionHandler = createBuildPluginDllTask(
         "VersionHandler", "VersionHandler", "Google.VersionHandler.dll", false)
 Task buildVersionHandlerImpl = createBuildPluginDllTask(
@@ -1958,6 +1957,8 @@ Task buildPackageManagerResolver = createBuildPluginDllTask(
         "PackageManagerResolver", "PackageManagerResolver",
         "Google.PackageManagerResolver.dll", true,
         [buildVersionHandlerImpl])
+Task buildAPCM = createBuildPluginDllTask(
+        "AndroidProjectGradle", "AndroidProjectGradle", "Google.JarResolver.ConfigurationManager.dll", false)
 
 task preparePluginStagingAreaDir(type: Task) {
     description "Delete all files that should not be present in staging area."

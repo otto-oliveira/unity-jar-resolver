@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: 052fc6841b304ce4801cd850104efc6c
+labels:
+- gvh_version-1.2.179
+- gvhp_exportpath-ExternalDependencyManager/Editor/Google.AndroidProjectGradle.dll
+- gvh
+- gvhp_targets-editor
+PluginImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  iconMap: {}
+  executionOrder: {}
+  defineConstraints:
+  - UNITY_6000 || UNITY_2023_2
+  isPreloaded: 0
+  isOverridable: 0
+  platformData:
+  - first:
+      Any: 
+    second:
+      enabled: 0
+      settings: {}
+  - first:
+      Editor: Editor
+    second:
+      enabled: 1
+      settings:
+        DefaultValueInitialized: true
+  - first:
+      Windows Store Apps: WindowsStoreApps
+    second:
+      enabled: 0
+      settings:
+        CPU: AnyCPU
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

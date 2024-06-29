@@ -8,7 +8,7 @@
           "platforms": ["Editor"],
           "paths": [
             "ExternalDependencyManager/Editor/Google.VersionHandler.*",
-            "ExternalDependencyManager/Editor/Google.AndroidProjectGradle.*"
+            "ExternalDependencyManager/Editor/Google.JarResolver.ConfigurationManager.*"
           ]
         },
         {
